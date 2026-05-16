@@ -37,12 +37,41 @@ body{
 
 .title{
     position:absolute;
-    top:8%;
+    top:7%;
     width:100%;
     text-align:center;
     color:white;
     font-size:3rem;
     z-index:2;
+    animation:fadeIn 2s ease;
+}
+
+.loveLetter{
+    position:absolute;
+    top:22%;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:80%;
+    max-width:700px;
+
+    color:white;
+    text-align:center;
+
+    font-size:1.2rem;
+    line-height:1.8;
+
+    background:rgba(255,255,255,0.12);
+
+    padding:25px;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(8px);
+
+    z-index:2;
+
+    animation:fadeIn 3s ease;
 }
 
 .popup{
@@ -56,6 +85,7 @@ body{
     opacity:0;
     animation:floatUp 7s ease forwards;
     z-index:2;
+    box-shadow:0 0 20px rgba(255,255,255,0.12);
 }
 
 .button{
@@ -71,6 +101,11 @@ body{
     cursor:pointer;
     font-size:1rem;
     z-index:3;
+    transition:0.3s;
+}
+
+.button:hover{
+    transform:translateX(-50%) scale(1.05);
 }
 
 .final{
@@ -82,7 +117,7 @@ body{
     font-size:1.3rem;
     opacity:0;
     animation:fadeIn 3s ease forwards;
-    animation-delay:22s;
+    animation-delay:30s;
     z-index:2;
 }
 
@@ -90,6 +125,7 @@ body{
     position:absolute;
     color:white;
     animation:rise 10s linear infinite;
+    opacity:0.7;
 }
 
 @keyframes rise{
@@ -111,7 +147,7 @@ body{
 @keyframes floatUp{
     0%{
         opacity:0;
-        transform:translateY(20px);
+        transform:translateY(20px) scale(0.9);
     }
 
     15%{
@@ -124,7 +160,7 @@ body{
 
     100%{
         opacity:0;
-        transform:translateY(-30px);
+        transform:translateY(-30px) scale(1.05);
     }
 }
 
@@ -148,6 +184,14 @@ body{
 
 <h1 class="title">A Month of Us ❤️</h1>
 
+<div class="loveLetter">
+    I pray that this relationship honours God and that we may
+    love each other intentionally 🤍<br><br>
+
+    I love you Leejunior Simphiwe Dawu.<br>
+    Ohhhh brother in Christ 🤣
+</div>
+
 <button class="button" onclick="startStory()">
     Start Our Story ✨
 </button>
@@ -165,12 +209,11 @@ const messages = [
 "Getting shy when I see you sometimes 🥺",
 "You opening doors for me 🚪",
 "Supporting me when I need it most 🤍",
-"Having the biggest laughs together😁",
-"Melting into your hugs and loving your height 🥺"
-"Listening to all my yapping…even if you somehow yap even more than me 😭",
-"Seeing you be a superstar💻",
-"Getting to stare at your handsome face💋",
-
+"Having the biggest laughs together 😁",
+"Melting into your hugs and loving your height 🥺",
+"Listening to all my yapping… even if you somehow yap even more than me 😭",
+"Seeing you be a superstar 💻",
+"Getting to stare at your handsome face 💋",
 "One month down, many more to go ✨"
 
 ];
@@ -178,8 +221,6 @@ const messages = [
 function startStory(){
 
     document.querySelector(".button").style.display = "none";
-
-    document.getElementById("music").play();
 
     messages.forEach((text, index) => {
 
